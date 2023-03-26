@@ -18,3 +18,5 @@ Resources used:
 Icons: https://v4.mui.com/
 
 Using Firebase for authentication
+
+Hosted in firebase: https://eshop-a0a13.web.app/
