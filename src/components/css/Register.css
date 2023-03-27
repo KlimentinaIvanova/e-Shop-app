@@ -1,0 +1,42 @@
+#register {
+  width: 20%;
+  margin: 0 auto;
+}
+
+#register h1 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+#register label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+#register input[type="email"],
+#register input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  background-color: white;
+}
+
+#register input[type="submit"] {
+  display: block;
+  width: 104%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f7b500;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  padding-left: 20px;
+  margin-top: 20px;
+}
+
+
+  

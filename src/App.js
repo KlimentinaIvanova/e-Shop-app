@@ -1,216 +1,87 @@
 import './App.css';
+import Login from './components/Login';
+import Logout from './components/Logout';
+import Register from './components/Register';
 import Header from './components/Header';
-import { Home } from './components/Home';
+import  Home  from './components/Home';
 import Catalog from './components/Catalog'
+import Contacts from './components/Contacts';
+import {Details }from './components/Details';
+import CreateProduct from './components/CreateProduct';
+import Edit from './components/Edit';
+import firebase from './firebase'
 import { Routes, Route, useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { AuthProvider } from './Services/AuthContext';
+
+
 
 function App() {
+  const [auth,setAuth]=useState({})
+  const [products,setProducts]=useState([])
+  const navigate=useNavigate()
+
+  useEffect(() => {
+    const db = firebase.firestore();
+    db.collection("catalog")
+      .get()
+      .then((result) => {
+        const data = [];
+        result.forEach((doc) => {
+          data.push({ id: doc.id, ...doc.data() });
+        });
+        setProducts(data);
+      });
+  }, []);
+
+  const userLogin = (authData) => {
+    setAuth(authData)
+    
+  }
+
+  const addComment=(productsId,comment)=>{
+    setProducts(state=>{
+      const product=state.find(x=>x.id===productsId)
+    const comments=product.comments || []
+    comments.push(comment)
+
+return[
+  ...state.filter(x=>x.id !== productsId),
+  {...product, comments: comments}, 
+]
+
+    })
+  }
+
+  const onAddProductSubmit = async (data) => {
+    const db = firebase.firestore();
+    const newProductRef = await db.collection("catalog").add(data);
+    const newProduct = { id: newProductRef.id, ...data };
+    setProducts((prevProducts) => [...prevProducts, newProduct]);
+    navigate("/catalog");
+   
+  };
+
+ 
   return (
 <>
-<Header/>
-<Home/>
-<Catalog/>
+<AuthProvider value={{ user: auth, userLogin }}>
+<Routes>
+  <Route path='/'element={<Header/>}/>
+  <Route path='/'element={<Home/>}/>
+  <Route path='/catalog'element={<Catalog products={products}/>}/>
+  <Route path='/contacts'element={<Contacts/>}/>
+  <Route path='/login'element={<Login/>}/>
+  <Route path='/logout' element={<Logout/>}/>
+  <Route path='/register'element={<Register/>}/>
+  <Route path='/create'element={<CreateProduct onAddProductSubmit={onAddProductSubmit}/>}/>
+  <Route path="/catalog/:prodId" element={<Details products={products} addComment={addComment} />} />
+  <Route path='/catalog/:prodId/edit' element={<Edit/>}/>
+  
+</Routes>
 
-  {/* best */}
-  <div id="" className="best">
-    <div className="container">
-      <div className="row">
-        <div className="col-md-12">
-         
-        </div>
-      </div>
-      <div className="row">
-        <div className="col-md-4">
-       
-        </div>
-        <div className="col-md-4">
-          <div className="best_box">
-            
-          </div>
-        </div>
-        <div className="col-md-4">
-          <div className="best_box">
-
-          </div>
-        </div>
-        <div className="col-md-12">
-          
-        </div>
-      </div>
-    </div>
-  </div>
-  {/* end best */}
-  {/* request */}
-  <div id="contact" className="request">
-    <div className="container">
-      <div className="row">
-        <div className="col-md-12">
-          <div className="titlepage">
-           
-          </div>
-        </div>
-      </div>
-      <div className="row">
-        <div className="col-sm-12">
-          <div className="black_bg">
-            <div className="row">
-              <div className="col-md-7 ">
-                <form className="main_form">
-                  <div className="row">
-                    <div className="col-md-12 ">
-                      
-                    </div>
-                    <div className="col-md-12">
-                      
-                    </div>
-                    <div className="col-md-12">
-                      
-                    </div>
-                    <div className="col-md-12">
-                      
-                    </div>
-                    <div className="col-sm-12">
-                      
-                    </div>
-                  </div>
-                </form>
-              </div>
-              <div className="col-md-5">
-                <div className="mane_img">
-            
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  {/* end request */}
-  {/* two_box section */}
-  <div className="two_box">
-    <div className="container-fluid">
-      <div className="row d_flex">
-        <div className="col-md-6">
-          <div className="two_box_img">
-            
-          </div>
-        </div>
-        <div className="col-md-6">
-          <div className="two_box_img">
-           
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  {/* end two_box section */}
-  {/* testimonial */}
-  <div className="testimonial">
-    <div className="container">
-      <div className="row">
-        <div className="col-md-12">
-          <div className="titlepage">
-      
-          </div>
-        </div>
-      </div>
-      <div className="row">
-        <div className="col-md-12">
-          <div
-            id="myCarousel"
-            className="carousel slide testimonial_Carousel "
-            data-ride="carousel"
-          >
-           
-            <div className="carousel-inner">
-              <div className="carousel-item active">
-                <div className="container">
-                  <div className="carousel-caption ">
-                    <div className="row">
-                      <div className="col-md-12">
-                        <div className="test_box">
-                         
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="carousel-item">
-                <div className="container">
-                  <div className="carousel-caption">
-                    <div className="row">
-                      <div className="col-md-12">
-                        <div className="test_box">
-                          
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="carousel-item">
-                <div className="container">
-                  <div className="carousel-caption">
-                    <div className="row">
-                      <div className="col-md-12">
-                        <div className="test_box">
-                         
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          
-          
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  {/* end testimonial */}
-  {/*  footer */}
-  <footer>
-    <div className="footer">
-      <div className="container">
-        <div className="row">
-          <div className="col-md-6">
-            <div className="cont">
-              
-            </div>
-          </div>
-          <div className="col-md-6">
-            <div className="cont_call">
-              <h3>
-                {" "}
-                <strong className="multi"> Call Now</strong>
-                <br />
-                (+1) 12345667890
-              </h3>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="copyright">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-12">
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
-  {/* end footer */}
-  {/* Javascript files*/}
-  {/* sidebar */}
+  </AuthProvider>
 </>
-
   );
 }
-
 export default App;

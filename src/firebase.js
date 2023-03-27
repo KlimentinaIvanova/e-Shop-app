@@ -18,4 +18,8 @@ const firebaseConfig = {
 const db = firebaseApp.firestore();
 const auth = firebase.auth();
 
-export { db, auth };
+const user=auth.currentUser
+
+
+export { db, auth,firebaseConfig,user };
+export default firebase
