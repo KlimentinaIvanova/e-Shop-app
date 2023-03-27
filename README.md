@@ -1,3 +1,56 @@
+e-Shop App
+The e-Shop App is an open-source e-commerce platform built using React and Firebase. The app allows customers to browse products. 
+Customers can also like products that they are interested in. Vendors can use the platform to add, update, and delete products from their inventory.
+
+Features
+The e-Shop app offers the following features:
+
+User authentication using Firebase Authentication
+Browse and search products
+Update cart items
+Like products
+Vendor dashboard for managing products
+Login page
+Register page
+Log out page
+Contacts page
+Catalog page
+Details page
+Resources Used
+The e-Shop app uses the following resources:
+
+Firebase for authentication
+Hosted on Firebase at https://eshop-a0a13.web.app/
+
+Installation
+To run the e-Shop app locally, follow these steps:
+
+Clone the repository: git clone https://github.com/KlimentinaIvanova/e-Shop-app.git
+Navigate to the project directory: cd e-Shop-app
+Install the required packages: npm install
+Create a new Firebase project and add your Firebase config details to .env
+Start the development server: npm start
+Deployment
+To deploy the e-Shop app to production, follow these steps:
+
+Create a new Firebase project
+Add your Firebase config details to .env.production
+Build the app for production: npm run build
+Deploy the app to Firebase Hosting: firebase deploy
+Contributing
+Contributions to the e-Shop app project are welcome! To contribute, please follow these steps:
+
+Fork the repository
+Create a new branch for your feature or bug fix
+Make your changes and commit them with clear commit messages
+Push your changes to your forked repository
+Submit a pull request to the main repository
+License
+The e-Shop app is released under the MIT License. See the LICENSE file for details.
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
