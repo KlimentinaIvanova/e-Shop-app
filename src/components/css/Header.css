@@ -19,7 +19,7 @@ header {
 
 #user .nav-link:hover,
 #guest .nav-link:hover {
-  color: blue;
+  color: black
 }
 
 .form-control-me-2 {
@@ -93,6 +93,21 @@ form.d-flex button.btn-outline-success {
 .text-bg {
   color: #fff;
 }
+ul {
+  list-style: none; /* remove bullet points */
+  margin: 0; /* remove default margin */
+  padding: 0; /* remove default padding */
+  white-space: nowrap; /* prevent li elements from wrapping */
+
+}
+
+ul li {
+  display: inline-block; /* make li elements appear on one line */
+
+ 
+}
+
+
 
 
 
