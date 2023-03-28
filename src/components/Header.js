@@ -20,14 +20,14 @@ const Header = () => {
           <img src="images/logo.png" alt="logo" />
         </a>
       </div>
-     
+      
       <div className="collapse navbar-collapse" id="navbarNav">
-        <ul className="navbar-nav navbar-nav-ms-auto">
+      <ul className="navbar-nav navbar-nav-ms-auto">
           <li className="nav-item">
             <Link className="nav-link" to="/">Home</Link></li>
           <li className="nav-item">
             <Link className="nav-link" to="/catalog">Catalog</Link></li>
-          {user && user.email ? (
+          {user && user.email ? 
             <div id="user" class="d-flex">
               <li className="nav-item">
                 <Link className="nav-link" to="/create">Create Product</Link>
@@ -43,8 +43,7 @@ const Header = () => {
                 </Link>
               </li>
             </div>
-          ) : (
-            <div id="guest" className="d-flex">
+           : <div id="guest" className="d-flex">
               <li className="nav-item">
                 <Link className="nav-link" to="/login">
                   Login
@@ -57,24 +56,16 @@ const Header = () => {
                 </Link>
               </li>
             </div>
-          )}
+          }
           <li className="nav-item">
             <Link className="nav-link" to="/contacts">
               Contact Us
             </Link>
           </li>
         </ul>
-        <form className="d-flex">
-          <input
-            className="form-control form-control-me-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-          />
-          <button className="btn btn-outline-success" type="submit">
-            <i className="fa fa-search"></i>
-          </button>
-        </form>
+        <div class="search-container"></div>
+          <input className="form-control form-control-me-2" type="search" placeholder="Search" aria-label="Search"/>
+          <button className="btn btn-outline-success" type="submit"><i className="fa fa-search"></i></button>
       </div>
     </div>
   <section className="banner_main">
