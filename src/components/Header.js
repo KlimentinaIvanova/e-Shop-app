@@ -20,17 +20,6 @@ const Header = () => {
           <img src="images/logo.png" alt="logo" />
         </a>
       </div>
-      <button
-        className="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span className="navbar-toggler-icon"></span>
-      </button>
       <div className="collapse navbar-collapse" id="navbarNav">
         <ul className="navbar-nav ms-auto">
           <li className="nav-item">
@@ -96,13 +85,15 @@ const Header = () => {
     </div>
   </nav>
   <section className="banner_main">
-    <div className="text-bg">
+    <div className="text-bg" style={{color: "white"}}>
       <h1>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni ea minima quam autem iste voluptatem fugit quod praesentium, neque vitae consequuntur harum aliquid facilis natus, voluptatibus explicabo assumenda ex soluta.
       </h1>
     </div>
   </section>
 </header>
+
+
   
     );
   };
