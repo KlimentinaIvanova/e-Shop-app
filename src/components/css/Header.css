@@ -22,19 +22,6 @@ header {
   color: black
 }
 
-.form-control-me-2 {
-  background-color: #fff;
-  border-color: #000;
-  color: #000;
-  height: 30px;
-}
-
-.btn-outline-success {
-  color: #fff;
-  border-color: #f90;
-  background-color: #f90;
-}
-
 .btn-outline-success:hover {
   background-color: #fff;
 }
@@ -94,18 +81,57 @@ form.d-flex button.btn-outline-success {
   color: #fff;
 }
 ul {
-  list-style: none; /* remove bullet points */
-  margin: 0; /* remove default margin */
-  padding: 0; /* remove default padding */
-  white-space: nowrap; /* prevent li elements from wrapping */
-
+  position: absolute;
+  top: 0;
+  right: 0; /* move the ul to the top-right corner of its parent element */
+   
 }
+
 
 ul li {
   display: inline-block; /* make li elements appear on one line */
 
  
 }
+.form-group {
+  position: relative; /* make the container positioned relatively */
+}
+
+.form-control-me-2 {
+  position: absolute; /* make the element positioned absolutely */
+  right:50px; /* align the left edge of the element with the left edge of its container */
+  top: 1; /* align the top edge of the element with the top edge of its container */
+  height: 50px;
+  width:97%;
+  border: 2px solid orange;
+}
+
+.btn-outline-success {
+ position:absolute;
+ right:0;
+ top:132px;
+ width: 100px;
+height: 50px;
+
+}
+.logo{
+position: absolute;
+top:0;
+left: 0;
+}
+.text-bg {
+  margin-top: 20px; /* add 20 pixels of margin at the top */
+  width: 100%;
+}
+h1 {
+  margin-top: 50px; /* add 20 pixels of margin at the top */
+  width: 100%;;
+}
+
+
+
+
+
 
 
 
