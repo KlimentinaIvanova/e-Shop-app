@@ -13,31 +13,24 @@ const Header = () => {
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
   />
-  <nav className="navbar navbar-expand-lg navbar-light bg-light">
-    <div className="container-fluid">
+  
+    <div classMame="container-fluid">
       <div className="img_logo">
         <a href="/">
           <img src="images/logo.png" alt="logo" />
         </a>
       </div>
+     
       <div className="collapse navbar-collapse" id="navbarNav">
-        <ul className="navbar-nav ms-auto">
+        <ul className="navbar-nav navbar-nav-ms-auto">
           <li className="nav-item">
-            <Link className="nav-link" to="/">
-              Home
-            </Link>
-          </li>
+            <Link className="nav-link" to="/">Home</Link></li>
           <li className="nav-item">
-            <Link className="nav-link" to="/catalog">
-              Catalog
-            </Link>
-          </li>
+            <Link className="nav-link" to="/catalog">Catalog</Link></li>
           {user && user.email ? (
-            <div id="user">
+            <div id="user" class="d-flex">
               <li className="nav-item">
-                <Link className="nav-link" to="/create">
-                  Create Product
-                </Link>
+                <Link className="nav-link" to="/create">Create Product</Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/logout">
@@ -51,12 +44,13 @@ const Header = () => {
               </li>
             </div>
           ) : (
-            <div id="guest">
+            <div id="guest" className="d-flex">
               <li className="nav-item">
                 <Link className="nav-link" to="/login">
                   Login
                 </Link>
               </li>
+              
               <li className="nav-item">
                 <Link className="nav-link" to="/register">
                   Register
@@ -72,7 +66,7 @@ const Header = () => {
         </ul>
         <form className="d-flex">
           <input
-            className="form-control me-2"
+            className="form-control form-control-me-2"
             type="search"
             placeholder="Search"
             aria-label="Search"
@@ -83,18 +77,19 @@ const Header = () => {
         </form>
       </div>
     </div>
-  </nav>
   <section className="banner_main">
-    <div className="text-bg" style={{color: "white"}}>
+    <div className="text-bg">
       <h1>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni ea minima quam autem iste voluptatem fugit quod praesentium, neque vitae consequuntur harum aliquid facilis natus, voluptatibus explicabo assumenda ex soluta.
       </h1>
     </div>
+    <div className="col-md-7 padding_right1">
+              <div className="text-img">
+                 <figure><img src="images/top_img.png" alt="#"/></figure>
+              </div>
+           </div>
   </section>
 </header>
-
-
-  
     );
   };
   export default Header;
