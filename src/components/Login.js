@@ -1,7 +1,7 @@
-import { auth } from '../firebase'
 import { AuthContext } from '../Services/AuthContext'
 import { useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { auth } from '../firebase'
 //import { useForm } from './hooks/useForm';
 import "./css/Login.css"
 const Login=()=>{
@@ -19,9 +19,9 @@ const Login=()=>{
       auth.signInWithEmailAndPassword(email, password)
       
         .then((userCredential) => {
-          const  {user} = userCredential.user;
+          const  {user} = userCredential;
           login(user);
-          //console.log(user)
+          console.log(user)
           navigate('/catalog');
         })
         .catch((error) => {
