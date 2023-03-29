@@ -1,12 +1,12 @@
-import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 import firebase from '../firebase'
 import './css/Edit.css'
 
  const Edit = () => {
   const { prodId } = useParams();
-  const db = firebase.firestore();
   const navigate = useNavigate();
+  const db = firebase.firestore();
   const [values, setValues] = useState({
     name: '',
     price: '',
@@ -24,7 +24,7 @@ import './css/Edit.css'
         console.log('The product does not exist!');
       }
     }).catch((error) => {
-      console.log('Error getting document:', error);
+      console.log('Error getting product:', error);
     });
   }, [prodId,db]);
 
