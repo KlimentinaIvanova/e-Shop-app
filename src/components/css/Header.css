@@ -1,132 +1,107 @@
-header {
-
-  background-size: cover;
-  background-position: center;
-}
-
-.navbar-light .navbar-nav .nav-link {
-  color: white;
-}
-
-.navbar-light .navbar-nav .nav-link:hover {
-  color: orange;
-}
-
-#user .nav-link,
-#guest .nav-link {
-  color:black;
-}
-
-#user .nav-link:hover,
-#guest .nav-link:hover {
-  color: black
-}
-
-.btn-outline-success:hover {
-  background-color: #fff;
-}
-
-.banner-main {
-  margin-top: -33px;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: #fff;
-}
-
-
-.container-fluid {
-  width: 100%;
-  max-width: none;
-  padding-right: 0;
-  padding-left: 0;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.text-bg h1 {
-  font-size: 40px;
-  font-weight: bold;
-  background-color: black;
-}
-.d-flex {
-  width: 100%; /* Change the value to adjust the width */
+.header {
   position: relative;
-  justify-content: space-between;
-  
-}
-.form-control-me-2 {
-  width: 92%; /* Change the value to adjust the width */
-  margin-left: 50px;
-}
-#navbarNav {
-  display: flex;
-  justify-content: space-between;
+  background-color: #fff;
+  height: auto;
+  z-index: 99;
 }
 
-form.d-flex {
-  margin-left: 20px;
-}
-
-form.d-flex button.btn-outline-success {
-  margin-left: 5px;
-}
-.navbar-nav-ms-auto {
-  display: flex;
-  flex-wrap: nowrap;
-  
-}
-.nav-link {
-  margin-right: 30px;
-}
-.text-bg {
-  color: #fff;
-}
-ul {
+.navigation {
   position: absolute;
   top: 0;
-  right: 0; /* move the ul to the top-right corner of its parent element */
-   
+  left: 0;
+}
+
+.navigation ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+}
+
+.navigation li {
+  margin-right: 20px;
+}
+
+.navigation li:last-child {
+  margin-right: 0;
+}
+
+.navigation a {
+  color: #000;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.logo {
+  position: relative;
+  margin-top: 23px;
+  margin-left: -30px;
+  left:0
+  
+}
+
+.logo img {
+  width: 300px; /* or any other desired width */
+  height: 100%; /* maintain aspect ratio */
+
 }
 
 
-ul li {
-  display: inline-block; /* make li elements appear on one line */
+.form-control {
+  font-size: 24px; /* or any other desired font size */
+  width: 1050px; /* or any other desired width */
+  margin-top: 157px;
+  margin-right: -850px;
 
- 
 }
-.form-group {
-  position: relative; /* make the container positioned relatively */
-}
-
-.form-control-me-2 {
-  position: absolute; /* make the element positioned absolutely */
-  right:50px; /* align the left edge of the element with the left edge of its container */
-  top: 1; /* align the top edge of the element with the top edge of its container */
-  height: 50px;
-  width:97%;
-  border: 2px solid orange;
-}
-
 .btn-outline-success {
- position:absolute;
- right:0;
- top:132px;
- width: 100px;
-height: 50px;
+  flex-grow: 0;
 
 }
-.logo{
-position: absolute;
-top:0;
-left: 0;
+.d_flex {
+  font-size: 20px;
+  padding: 10px;
+  margin-right: -20px; /* move the search input closer to the button */
+}
+.fa-search {
+  font-size: 18px;
+}
+#user {
+  display: flex;
+  align-items: center;
+}
+#user li:nth-child(2) {
+  margin-right: 20px;
+}
+
+.banner_main {
+  height: 100%; /* Change the height as desired */
+  margin-top: 27px;
+
 }
 .text-bg {
-  margin-top: 20px; /* add 20 pixels of margin at the top */
-  width: 100%;
+  font-size: 20px;
 }
-h1 {
-  margin-top: 50px; /* add 20 pixels of margin at the top */
-  width: 100%;;
+.text-img img {
+  max-width: 85%; /* ensure the image doesn't exceed its container's width */
+  height: auto; /* maintain the image's aspect ratio */
+  display: block; /* remove any default spacing or alignment issues */
 }
+
+#guest li.nav-item {
+  display: inline-block;
+  margin-right: 10px; /* optional - adds some spacing between the elements */
+}
+
+
+
+
+
+
+
+
 
 
 
