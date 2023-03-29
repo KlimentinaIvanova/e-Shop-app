@@ -1,13 +1,12 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
-
 import { AuthContext } from '../Services/AuthContext';
+import { useNavigate } from 'react-router-dom';
 import { auth } from '../firebase';
 
 export const Logout = () => {
-    const navigate = useNavigate();
     const { user, logout } = useContext(AuthContext);
+    const navigate = useNavigate();
     let current = user;
   console.log(current)
   console.log(user)
