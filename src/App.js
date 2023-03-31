@@ -13,6 +13,7 @@ import firebase from './firebase'
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { AuthProvider } from './Services/AuthContext';
+import NotFound from './components/NotFound';
 
 
 
@@ -39,19 +40,19 @@ function App() {
     
   }
 
-  const addComment=(productsId,comment)=>{
-    setProducts(state=>{
-      const product=state.find(x=>x.id===productsId)
-    const comments=product.comments || []
-    comments.push(comment)
+  //const addComment=(productsId,comment)=>{
+    //setProducts(state=>{
+     // const product=state.find(x=>x.id===productsId)
+   // const comments=product.comments || []
+   // comments.push(comment)
 
-return[
-  ...state.filter(x=>x.id !== productsId),
-  {...product, comments: comments}, 
-]
+//return[
+ // ...state.filter(x=>x.id !== productsId),
+ // {...product, comments: comments}, 
+//]
 
-    })
-  }
+   // })
+  //}
 
   const onAddProductSubmit = async (data) => {
     const db = firebase.firestore();
@@ -75,9 +76,9 @@ return[
   <Route path='/logout' element={<Logout/>}/>
   <Route path='/register'element={<Register/>}/>
   <Route path='/create'element={<CreateProduct onAddProductSubmit={onAddProductSubmit}/>}/>
-  <Route path="/catalog/:prodId" element={<Details products={products} addComment={addComment} />} />
+  <Route path="/catalog/:prodId" element={<Details products={products}/>} />
   <Route path='/catalog/:prodId/edit' element={<Edit/>}/>
-  
+  <Route path="*" element={<NotFound/>}/>
 </Routes>
 
   </AuthProvider>
