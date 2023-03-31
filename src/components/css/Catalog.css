@@ -30,3 +30,29 @@
   margin-top: 50px;
   font-weight: bold;
 }
+.no_products {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.no_products > div {
+  width: 50%;
+}
+
+.product-img {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  height: 200px; /* or whatever height you want */
+}
+
+.product-img img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+
+
+
