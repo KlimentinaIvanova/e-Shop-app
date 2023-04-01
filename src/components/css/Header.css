@@ -53,7 +53,7 @@
 .form-control {
   font-size: 24px; /* or any other desired font size */
   width: 1050px; /* or any other desired width */
-  margin-top: 157px;
+  margin-top: 255px;
   margin-right: -850px;
 
 }
@@ -62,8 +62,8 @@
 
 }
 .d_flex {
-  font-size: 20px;
-  padding: 10px;
+  font-size: 10px;
+  padding: -20px;
   margin-right: -20px; /* move the search input closer to the button */
 }
 .fa-search {
@@ -79,7 +79,7 @@
 
 .banner_main {
   height: 100%; /* Change the height as desired */
-  margin-top: 27px;
+  margin-top: 0px;
 
 }
 .text-bg {
