@@ -1,6 +1,7 @@
 import { useState, useContext } from 'react';
 import { AuthContext } from '../Services/AuthContext';
 import '../components/css/CreateProduct.css'
+import { Link } from 'react-router-dom';
 
 const CreateProduct=({ onAddProductSubmit })=>{
 
@@ -22,7 +23,12 @@ const CreateProduct=({ onAddProductSubmit })=>{
       }
     
     return(
-
+<div className='nav_createproduct'><Link className="nav-link" to="/">
+              Home
+            </Link>
+            <Link className="nav-link" to="/catalog">
+              Catalog
+            </Link>
 <section id="create-page" className="auth">
       <form id="create-product" onSubmit={onSubmit} >
         <div className="container">
@@ -54,10 +60,14 @@ const CreateProduct=({ onAddProductSubmit })=>{
             type="number"
             id="price"
             name="price"
-            min={1}
-            placeholder={1}
+            //min={1}
+            //placeholder={1}
+            decimalScale={2}
+            thousandSeparator={true}  
+          
           />
           </div>
+          
           <div className='create-product-image'>
           <label htmlFor="img">Image:</label>
           <input value={values.img}
@@ -78,6 +88,7 @@ const CreateProduct=({ onAddProductSubmit })=>{
         </div>
       </form>
     </section>
+    </div>
     )
 }
 export default CreateProduct
