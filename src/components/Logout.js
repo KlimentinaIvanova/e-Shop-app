@@ -31,7 +31,11 @@ export const Logout = () => {
       <>
       <div><Link className="nav-link" to="/">
               Home
-            </Link></div>
+            </Link>
+            <Link className="nav-link" to="/login">
+                  Login
+                </Link>
+                </div>
       <div className='logout-container'>
       
         {error && <p className="error-message">{error}</p>}
