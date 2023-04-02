@@ -55,7 +55,7 @@ import './css/Edit.css'
           <label htmlFor="name">Name:</label>
           <input
             type="text"
-            id="name"
+            id="id"
             name="name"
             value={values.name}
             onChange={handleChange}
@@ -69,7 +69,7 @@ import './css/Edit.css'
             name="price"
             //min={1}
             decimalScale={2}
-            thousandSeparator={true}  
+            thousandseparator={true}  
             value={values.price}
             onChange={handleChange}
           />
