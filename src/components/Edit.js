@@ -67,7 +67,9 @@ import './css/Edit.css'
             type="number"
             id="price"
             name="price"
-            min={1}
+            //min={1}
+            decimalScale={2}
+            thousandSeparator={true}  
             value={values.price}
             onChange={handleChange}
           />
