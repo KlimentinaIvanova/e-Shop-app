@@ -1,37 +1,54 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-import { useEffect, useContext } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { AuthContext } from '../Services/AuthContext';
-import { useNavigate } from 'react-router-dom';
 import { auth } from '../firebase';
+import { Link } from 'react-router-dom';
+import './css/Logout.css'
 
 export const Logout = () => {
     const { user, logout } = useContext(AuthContext);
-    const navigate = useNavigate();
-    let current = user;
-  console.log(current)
-  console.log(user)
-  
+    const [loggedOut, setLoggedOut] = useState(false);
+    const [error, setError] = useState(null);
   
     const handleLogout = async () => {
       try {
-        await auth.signOut(current.accessToken);
+        await auth.signOut();
 
         logout();
         localStorage.clear();
-        current = null;
-        navigate('/');
+        setLoggedOut(true);
   
       } catch (error) {
         console.log(error);
-        navigate('/login');
+        setError('An error occurred while logging out.');
       }
     };
   
-  
     useEffect(() => {
       handleLogout();
-    }, [handleLogout]);
+    }, []);
   
-    return null;
-  }
+    return (
+      <>
+      <div><Link className="nav-link" to="/">
+              Home
+            </Link></div>
+      <div className='logout-container'>
+      
+        {error && <p className="error-message">{error}</p>}
+        {loggedOut && <p className='success-message'>You have successfully logged out.</p>}
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8uGuVhPYdwKgO9CKjBtDeLWnPK3ccednNBQ&usqp=CAU" alt='logout'/>
+        </div>
+      </>
+    );
+};
+  
 export default Logout;
+
+
+
+
+
+
+
+
+
