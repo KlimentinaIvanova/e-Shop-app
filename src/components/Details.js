@@ -86,7 +86,16 @@ export function Details() {
 
 
   return (
-
+<div className='nav_details'>
+<Link className="nav-link" to="/">
+              Home
+            </Link>
+            <Link className="nav-link" to="/catalog">
+              Catalog
+            </Link>
+            <Link className="nav-link" to="/create">
+                  Create Product
+                </Link>
     <div className="row">
       <div className="img-name">
         <img
@@ -123,6 +132,7 @@ export function Details() {
       <p className="product-description" mb="0">{product.description}</p>
       <hr />
       </div>
+    </div>
     </div>
   )
 };
