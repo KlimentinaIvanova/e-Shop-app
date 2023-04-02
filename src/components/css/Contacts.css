@@ -21,5 +21,10 @@
   .cont_call p {
     margin: 10px 0;
   }
+  .nav_contacts {
+    float: left !important;
+    margin-right: 1800px !important;
+  }
+  
   
   
