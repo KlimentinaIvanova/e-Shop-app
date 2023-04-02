@@ -39,13 +39,13 @@
   margin-right: 10px;
 }
 #login input[type="password"]{
-  width: 90%;
+  width: 100%;
   padding: 10px;
   margin-bottom: 20px;
   font-size: 1.2rem;
   border: 1px solid #ccc;
   border-radius: 3px;
-  margin-left: 14px;
+  margin-left: 0px;
   
   
 }
