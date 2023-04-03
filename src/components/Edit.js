@@ -27,7 +27,7 @@ const Edit = () => {
     }).catch((error) => {
       console.log('Error getting product:', error);
     });
-  }, [prodId, isEditing]); // include isEditing as a dependency
+  }, [prodId, isEditing,db]); // include isEditing as a dependency
 
   const handleChange = (e) => {
     const { name, value } = e.target;
