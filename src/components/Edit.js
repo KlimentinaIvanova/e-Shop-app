@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import firebase from '../firebase'
 import './css/Edit.css'
 
- const Edit = () => {
+const Edit = () => {
   const { prodId } = useParams();
   const navigate = useNavigate();
   const db = firebase.firestore();
@@ -13,6 +13,7 @@ import './css/Edit.css'
     description: '',
     img: '',
   });
+  const [isEditing, setIsEditing] = useState(false); // new state variable
 
   useEffect(() => {
     const prodRef = db.collection('catalog').doc(prodId);
@@ -26,7 +27,7 @@ import './css/Edit.css'
     }).catch((error) => {
       console.log('Error getting product:', error);
     });
-  }, [prodId,db]);
+  }, [prodId, isEditing]); // include isEditing as a dependency
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -40,6 +41,7 @@ import './css/Edit.css'
     console.log(prodRef);
     prodRef.update(values).then(() => {
       console.log('Product updated successfully');
+      setIsEditing(!isEditing); // toggle the editing status to trigger re-fetch
       navigate(`/catalog/${prodId}`);
     }).catch((error) => {
       console.error('Error updating product:', error);
