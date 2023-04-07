@@ -7,9 +7,6 @@ import { Link } from 'react-router-dom'
     console.log(products)
     return(
       <div className='additional_navigation'>
-        <Link className="nav-link" to="/create">
-                  Create Product
-                </Link>
                 <Link className="nav-link" to="/">
               Home
             </Link>
