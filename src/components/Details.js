@@ -93,9 +93,6 @@ export function Details() {
             <Link className="nav-link" to="/catalog">
               Catalog
             </Link>
-            <Link className="nav-link" to="/create">
-                  Create Product
-                </Link>
     <div className="row">
       <div className="img-name">
         <img
