@@ -8,7 +8,7 @@ const CreateProduct=({ onAddProductSubmit })=>{
     const { currentUser } = useContext(AuthContext);
     const [values, setValue] = useState({
         name: "",
-        //title: "",
+        description: "",
         price: "",
         img: "",
         owner: currentUser ? currentUser.uid : null 
@@ -39,7 +39,7 @@ const CreateProduct=({ onAddProductSubmit })=>{
             value={values.name}
           onChange={onChangeHandler}
             type="text"
-            id="title"
+            id="name "
             name="name"
             placeholder="Enter name..."
           />
@@ -63,10 +63,20 @@ const CreateProduct=({ onAddProductSubmit })=>{
             //min={1}
             //placeholder={1}
             decimalScale={2}
-            thousandSeparator={true}  
+            thousandseparator={true}  
           
           />
           </div>
+
+          <div className="description">
+          <label htmlFor="description">Description:</label>
+          <textarea
+            id="description"
+            name="description"
+            value={values.description}
+            onChange={onChangeHandler}
+          />
+        </div>
           
           <div className='create-product-image'>
           <label htmlFor="img">Image:</label>
