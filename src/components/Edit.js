@@ -27,7 +27,7 @@ const Edit = () => {
     }).catch((error) => {
       console.log('Error getting product:', error);
     });
-  }, [prodId, isEditing,db]); // include isEditing as a dependency
+  }, [prodId, isEditing,db]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -78,8 +78,7 @@ const Edit = () => {
         </div>
         <div className="description">
           <label htmlFor="description">Description:</label>
-          <input
-            type="text"
+          <textarea
             id="description"
             name="description"
             value={values.description}
