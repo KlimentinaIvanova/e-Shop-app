@@ -42,6 +42,8 @@ const CreateProduct=({ onAddProductSubmit })=>{
             id="name "
             name="name"
             placeholder="Enter name..."
+            maxLength={30}
+            required
           />
           </div>
           {/*<label htmlFor="details">Details:</label>
@@ -63,7 +65,8 @@ const CreateProduct=({ onAddProductSubmit })=>{
             //min={1}
             //placeholder={1}
             decimalScale={2}
-            thousandseparator={true}  
+            thousandseparator={true} 
+            required 
           
           />
           </div>
@@ -75,6 +78,8 @@ const CreateProduct=({ onAddProductSubmit })=>{
             name="description"
             value={values.description}
             onChange={onChangeHandler}
+            maxLength={200}
+            required
           />
         </div>
           
